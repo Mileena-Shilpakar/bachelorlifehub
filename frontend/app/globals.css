@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 225 15% 95%;
+    --foreground: 222 92% 5%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 92% 5%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 92% 5%;
+
+    --primary: 230 31% 72%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 220 20% 90%;
+    --secondary-foreground: 222 70% 20%;
+
+    --muted: 220 15% 88%;
+    --muted-foreground: 222 25% 45%;
+
+    --accent: 230 25% 85%;
+    --accent-foreground: 222 70% 20%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 85%;
+    --input: 220 13% 85%;
+    --ring: 230 31% 72%;
+
+    --radius: 0.75rem;
+  }
+
+  /* .dark {
+    --background: 222 92% 5%;
+    --foreground: 215 20% 95%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 215 20% 90%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20% 90%;
+
+    --primary: 230 31% 72%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 224 50% 15%;
+    --secondary-foreground: 215 20% 90%;
+
+    --muted: 224 40% 12%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 224 40% 25%;
+    --accent-foreground: 215 20% 90%;
+
+    --destructive: 0 63% 50%;
+    --destructive-foreground: 215 20% 90%;
+
+    --border: 224 30% 20%;
+    --input: 224 30% 20%;
+    --ring: 230 31% 72%;
+  } */
+}
+
+/* Custom classes for the confetti effect */
+.confetti {
+  position: fixed;
+  width: 15px;
+  height: 15px;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.confetti:nth-child(1) {
+  left: 10%;
+  background-color: #a3abcb;
+}
+
+.confetti:nth-child(2) {
+  left: 20%;
+  background-color: #cbd4e4;
+  animation-delay: 0.5s;
+}
+
+.confetti:nth-child(3) {
+  left: 30%;
+  background-color: #868a9c;
+  animation-delay: 1s;
+}
+
+.confetti:nth-child(4) {
+  left: 40%;
+  background-color: #747c94;
+  animation-delay: 1.5s;
+}
+
+.confetti:nth-child(5) {
+  left: 50%;
+  background-color: #a3abcb;
+  animation-delay: 2s;
+}
+
+.confetti:nth-child(6) {
+  left: 60%;
+  background-color: #cbd4e4;
+  animation-delay: 2.5s;
+}
+
+.confetti:nth-child(7) {
+  left: 70%;
+  background-color: #868a9c;
+  animation-delay: 3s;
+}
+
+.confetti:nth-child(8) {
+  left: 80%;
+  background-color: #747c94;
+  animation-delay: 3.5s;
+}
+
+.confetti:nth-child(9) {
+  left: 90%;
+  background-color: #a3abcb;
+  animation-delay: 4s;
+}
+
+.sticker {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.7;
+  transition: transform 0.3s ease;
+}
+
+.sticker:hover {
+  transform: scale(1.2);
+}
+
+.kanban-column {
+  background-color: var(--muted);
+  min-height: 500px;
+  border-radius: var(--radius);
+  @apply p-4;
+}
+
+.task-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.emoji-button {
+  transition: transform 0.2s ease-in-out;
+}
+
+.emoji-button:hover {
+  transform: scale(1.2);
+}
+
