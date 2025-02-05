@@ -24,9 +24,9 @@ http://127.0.0.1:8000/api
 {
     "id": 6,
     "user": {
-        "first_name": "Roman",
-        "last_name": "Humagain",
-        "email": "romanhumagain@gmail.com"
+        "first_name": "meelina",
+        "last_name": "meelina",
+        "email": "meelina@gmail.com"
     },
     "points": 60,
     "level": 1,
