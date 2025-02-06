@@ -1,0 +1,36 @@
+
+# Virtual Environment
+venv/
+
+# Ignore migrations for all apps
+*/migrations/
+
+
+# Django & Python Files
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment Variables
+.env
+
+# Database (if using SQLite)
+*.sqlite3
+db.sqlite3
+
+# Static and Media Files (if generated dynamically)
+static/
+media/
+
+# Logs & Debug Files
+logs/
+*.log
+*.out
+*.err
+
+# IDE & OS Specific Files
+.DS_Store
+.idea/
+.vscode/
+
+.dump.rdb
