@@ -32,11 +32,6 @@ import {
 } from "@/components/ui/dialog";
 import { TaskForm } from "./task-form";
 import type { Task } from "@/app/types";
-import {
-  currentUser,
-  tasks as initialTasks,
-  milestones,
-} from "@/app/data/mock-data";
 import { useToast } from "@/hooks/use-toast";
 import axios from "axios";
 import { toast as toastify } from "react-toastify";
@@ -355,9 +350,11 @@ export function UserDashboard() {
       <div className="flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
         <div>
           <h1 className="text-2xl md:text-3xl font-bold text-shuttle-gray text-black dark:text-white">
-            Welcome back, <span className="dark:text-[#BB86FC]">{userInfo?.user?.first_name || "Friend"}{" "}
-            {userInfo?.user?.last_name}
-              </span>
+            Welcome back,{" "}
+            <span className="dark:text-[#BB86FC]">
+              {userInfo?.user?.first_name || "Friend"}{" "}
+              {userInfo?.user?.last_name}
+            </span>
           </h1>
           <p className="text-muted-foreground dark:text-[#959595]">
             {format(new Date(), "EEEE, MMMM do, yyyy")}
@@ -393,7 +390,7 @@ export function UserDashboard() {
         </CardContent>
       </Card>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-      <Card className="overflow-hidden border bg-gray-50 dark:border-gray-800 dark:bg-[#1D1D1D] shadow-sm">
+        <Card className="overflow-hidden border bg-gray-50 dark:border-gray-800 dark:bg-[#1D1D1D] shadow-sm">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 dark:text-gray-300">
             <CardTitle className="text-sm font-medium ">Total Tasks</CardTitle>
             <ListTodo className="h-4 w-4 text-muted-foreground dark:text-gray-300" />
@@ -402,7 +399,9 @@ export function UserDashboard() {
             <div className="text-2xl font-bold dark:text-white">
               {dashboardData?.total_task_count || "--"}
             </div>
-            <p className="text-xs text-muted-foreground dark:text-gray-500">Tasks created</p>
+            <p className="text-xs text-muted-foreground dark:text-gray-500">
+              Tasks created
+            </p>
           </CardContent>
         </Card>
         <Card className="overflow-hidden border bg-gray-50 dark:border-gray-800 dark:bg-[#1D1D1D] shadow-sm">
@@ -509,7 +508,9 @@ export function UserDashboard() {
       <Card className="overflow-hidden border bg-gray-50 dark:border-gray-800 dark:bg-[#1D1D1D] shadow-sm">
         <CardHeader className="flex flex-row items-center justify-between">
           <div>
-            <CardTitle className="text-lg dark:text-gray-300">Today's Tasks</CardTitle>
+            <CardTitle className="text-lg dark:text-gray-300">
+              Today's Tasks
+            </CardTitle>
             <CardDescription className="dark:text-gray-500">
               Tasks due today - {format(new Date(), "MMM d, yyyy")}
             </CardDescription>
@@ -555,7 +556,9 @@ export function UserDashboard() {
             </div>
           ) : (
             <div className="flex flex-col items-center justify-center py-6">
-              <p className="text-muted-foreground dark:text-gray-500 mb-2">No tasks due today</p>
+              <p className="text-muted-foreground dark:text-gray-500 mb-2">
+                No tasks due today
+              </p>
               <Button
                 variant="outline"
                 className="dark:bg-[#BB86FC] dark:text-white"
@@ -572,8 +575,12 @@ export function UserDashboard() {
       </Card>
       <Card className="overflow-hidden border bg-gray-50 dark:border-gray-800 dark:bg-[#1D1D1D] shadow-sm">
         <CardHeader>
-          <CardTitle className="text-lg dark:text-gray-300">Upcoming Tasks</CardTitle>
-          <CardDescription className="dark:text-gray-500">Your next 5 upcoming tasks</CardDescription>
+          <CardTitle className="text-lg dark:text-gray-300">
+            Upcoming Tasks
+          </CardTitle>
+          <CardDescription className="dark:text-gray-500">
+            Your next 5 upcoming tasks
+          </CardDescription>
         </CardHeader>
         <CardContent>
           {upcomingTasks.length > 0 ? (
@@ -589,7 +596,9 @@ export function UserDashboard() {
                 >
                   <div className="flex flex-col">
                     <div className="flex items-center gap-2">
-                      <span className="font-medium text-white">{task.title}</span>
+                      <span className="font-medium text-white">
+                        {task.title}
+                      </span>
                       {getPriorityBadge(task.priority)}
                     </div>
                     <span className="text-xs text-muted-foreground line-clamp-1 text-gray-300">
@@ -604,12 +613,18 @@ export function UserDashboard() {
             </div>
           ) : (
             <div className="flex flex-col items-center justify-center py-6">
-              <p className="text-muted-foreground dark:text-gray-500">No upcoming tasks</p>
+              <p className="text-muted-foreground dark:text-gray-500">
+                No upcoming tasks
+              </p>
             </div>
           )}
         </CardContent>
         <CardFooter>
-          <Button variant="outline" className="w-full dark:bg-[#BB86FC] dark:text-white" asChild>
+          <Button
+            variant="outline"
+            className="w-full dark:bg-[#BB86FC] dark:text-white"
+            asChild
+          >
             <a href="/dashboard/calendar">View Full Calendar</a>
           </Button>
         </CardFooter>

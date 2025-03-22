@@ -24,7 +24,6 @@ import { TaskForm } from "./task-form";
 import { Progress } from "@/components/ui/progress";
 import { Input } from "@/components/ui/input";
 import type { Task, Status } from "@/app/types";
-// import { tasks as initialTasks } from "@/app/data/mock-data"
 import { useToast } from "@/hooks/use-toast";
 import axios from "axios";
 import { toast as toastify } from "react-toastify";
@@ -391,12 +390,18 @@ export function KanbanBoard() {
 
       <div className="flex flex-col space-y-4">
         <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-bold text-shuttle-gray dark:text-white">My Tasks</h2>
+          <h2 className="text-2xl font-bold text-shuttle-gray dark:text-white">
+            My Tasks
+          </h2>
           <div className="flex items-center gap-4">
             <div className="bg-logan/10 px-3 py-1 rounded-full text-sm font-medium text-logan dark:text-white">
               🏆 Points: {totalPoints}
             </div>
-            <Button onClick={() => openTaskDialog()} variant="default" className="dark:bg-[#BB86FC] dark:text-white">
+            <Button
+              onClick={() => openTaskDialog()}
+              variant="default"
+              className="dark:bg-[#BB86FC] dark:text-white"
+            >
               <PlusCircle className="h-4 w-4" /> Add Task
             </Button>
             <Button

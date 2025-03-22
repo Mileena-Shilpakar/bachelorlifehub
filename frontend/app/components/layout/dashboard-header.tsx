@@ -27,7 +27,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { currentUser } from "@/app/data/mock-data";
 import axios from "axios";
 
 const navItems = [
@@ -200,7 +199,7 @@ export function DashboardHeader() {
                 <div className="flex flex-col space-y-1 leading-none">
                   <p className="font-medium">{userInfo?.user?.first_name}</p>
                   <p className="text-xs text-muted-foreground">
-                    {currentUser.email}
+                    {userInfo?.user?.email}
                   </p>
                 </div>
               </div>
